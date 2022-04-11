@@ -63,11 +63,57 @@ const questions = [
     }, 
     // Installation instructions
     {
-        type: 
-    }
+        type: 'input', 
+        name: 'description', 
+        message: 'Provide the steps to install your project', 
+        validate: installationInput => {
+            if (installationInput) {
+                return true;
+            } else {
+                console.log('Please tell us how to install your project');
+                return false;
+            }
+        }
+    }, 
     // Usage Information
+    {
+        type: 'input', 
+        name: 'usage', 
+        message: 'Provide examples on how to use your project'
+    }, 
     // Contribution guidelines
+    {
+        type: 'confirm', 
+        name: 'contributorAllowed',
+        message: 'Would you like to allow contributors?', 
+        default: true
+    }, 
+    {
+        type: 'input', 
+        name: 'contributeGuide', 
+        message: 'Please provide conotribution guidelines', 
+        when: ({ contributorAllowed }) => {
+            if (contributorAllowed) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validate: contributeGuideInput => {
+            if (contributeGuideInput) {
+                return true;
+            } else {
+                console.log('Please enter contribution guidelines');
+                return false;
+            }
+        },
+    },
     // Test Instructions
+    {
+        type: 'input', 
+        name: 'tests', 
+        message: 'How would you run tests on your application?'
+    }, 
     // Choose a lisence for your application from the list of options
 ]
 
