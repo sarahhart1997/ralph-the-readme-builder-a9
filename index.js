@@ -126,10 +126,23 @@ const questions = [
     },
 ]
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// Create a function to write README file
+function writeToFile(fileName, data) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(fileName, data, err => {
+            if (err) {
+                reject(err)
+                return
+            }
+            resolve({
+                ok: true,
+                message: 'ReadMe created!'
+            })
+        })
+    })
+}
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {}
 
 // Function call to initialize app
