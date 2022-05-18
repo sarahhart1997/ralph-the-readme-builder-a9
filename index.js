@@ -3,6 +3,9 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
+// Function to initiate question list
+const promptUser = () => inquirer.prompt(questions);
+
 // An array of questions for user input
 const questions = [
     // GitHub Username
