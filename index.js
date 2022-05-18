@@ -3,6 +3,12 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
+// Start Application
+const startApp = () => {
+    console.log(`Welcome to Ralph the ReadMe Generator! Enter your answers below`);
+    return promptUser();
+}
+
 // Function to initiate question list
 const promptUser = () => inquirer.prompt(questions);
 
