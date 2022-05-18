@@ -52,14 +52,14 @@ const questions = [
         type: 'input', 
         name: 'description', 
         message: 'Tell us a bit about your project', 
-        validate: descritionInput => {
-            if (descriptionInput) => {
-                return true;
-            } else {
-                console.log('Please tell us something about your project')
-                return false;
-            }
-        }
+        // validate: descritionInput => {
+        //     if (descriptionInput) => {
+        //         return true;
+        //     } else {
+        //         console.log('Please tell us something about your project')
+        //         return false;
+        //     }
+        // }
     }, 
     // Installation instructions
     {
@@ -115,6 +115,12 @@ const questions = [
         message: 'How would you run tests on your application?'
     }, 
     // Choose a lisence for your application from the list of options
+    {
+        type: 'list',
+        name: 'licenseName',
+        message: 'Which license does your project have?', 
+        choices: ['MIT License', 'GPL']
+    },
 ]
 
 // TODO: Create a function to write README file
