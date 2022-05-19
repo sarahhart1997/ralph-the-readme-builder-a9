@@ -3,12 +3,6 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// Start Application
-const startApp = () => {
-    console.log(`Welcome to Ralph the ReadMe Generator! Enter your answers below`);
-    return promptUser();
-}
-
 // Function to initiate question list
 const promptUser = () => inquirer.prompt(questions);
 
@@ -128,7 +122,7 @@ const questions = [
         type: 'list',
         name: 'licenseName',
         message: 'Which license does your project have?', 
-        choices: ['MIT License', 'GPL']
+        choices: ['MIT License', 'GPL', 'APACHE 2.0', 'BSD 3']
     },
 ]
 
@@ -149,7 +143,12 @@ function writeToFile(fileName, data) {
 }
 
 // Create a function to initialize app
-function init() {}
+function init() {
+    console.log(`Welcome to Ralph the ReadMe Generator! Enter your answers below`)
+    return promptUser()
+    const getText = generateMarkdown(answers)
+    writeToFile('./dIst/ReadMe.md', getText)
+}
 
 // Function call to initialize app
 init();
