@@ -1,7 +1,7 @@
 // initilize foundation
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // Function to initiate question list
 const promptUser = () => inquirer.prompt(questions);
@@ -147,7 +147,7 @@ function init() {
     console.log(`Welcome to Ralph the ReadMe Generator! Enter your answers below`)
     return promptUser()
     const getText = generateMarkdown(answers)
-    writeToFile('./dIst/ReadMe.md', getText)
+    writeToFile('./files/ReadMe.md', getText)
 }
 
 // Function call to initialize app
