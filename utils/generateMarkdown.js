@@ -25,12 +25,17 @@ function renderLicenseLink(license) {
     return ``
   }
   if (license === 'MIT License') {
-    return `[MIT]()`
+    return `[MIT](https://opensource.org/licenses/MIT)`
   }
   if (license === 'GPL') {
-    return `[GPL]()`
+    return `[GPL](https://www.gnu.org/licenses/gpl-3.0)`
   }
-  if (lic)
+  if (license === 'BSD 3') {
+    return `[BSD 3](https://opensource.org/licenses/BSD-3-Clause)`
+  }
+  if (license === 'APACHE 2.0') {
+    return `[APACHE 2.0](https://opensource.org/licenses/Apache-2.0)`
+  }
 }
 
 // TODO: Create a function that returns the license section of README
