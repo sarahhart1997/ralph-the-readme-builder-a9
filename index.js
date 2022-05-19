@@ -67,7 +67,7 @@ const questions = [
     // Installation instructions
     {
         type: 'input', 
-        name: 'description', 
+        name: 'Installation', 
         message: 'Provide the steps to install your project', 
         validate: installationInput => {
             if (installationInput) {
