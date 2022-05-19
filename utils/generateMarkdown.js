@@ -41,34 +41,32 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  return `This project is licensed under ${renderLicenseLink(license.licenseName)}.`
+  return `This project is licensed under ${renderLicenseLink(license)}.`
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data,license) {
   return `# ${data.title}
 
-${renderLicenseLink(license)}${renderLicenseBadge(license)}
-
 ## Description
 ${data.description}
 
 ## Table of Contents
 * [Installation](#installation)
-* [Usage](#usage)${renderLicenseTable(license)}
+* [Usage](#usage)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
 
 ## Installation
-${data.installation}
+${data.Installation}
 
 ## Usage
 ${data.usage}
-${renderLicenseSection(license)} 
+${renderLicenseSection(data.licenseName)} 
 
 ## License
-${renderLicenseSection(data)}
+${renderLicenseSection(data.licenseName)}
 
 ## Contributing
 'Do you want to allow contributors?' ${data.contributorAllowed}
@@ -77,9 +75,10 @@ ${renderLicenseSection(data)}
 
 ## Tests
 To run a test, run the following command: 
-${data.test}
+${data.tests}
 
 ## Questions
-Please let me know your thoughts or if you have any questions or concerns! ${data.email}.  To view more of my work you can visit: https://github.com/${data.username}.
+Please let me know your thoughts or if you have any questions or concerns! ${data.email}.  To view more of my work you can visit: https://github.com/${data.username}.`
+}
 
 module.exports = generateMarkdown;

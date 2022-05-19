@@ -145,9 +145,9 @@ function writeToFile(fileName, data) {
 // Create a function to initialize app
 function init() {
     console.log(`Welcome to Ralph the ReadMe Generator! Enter your answers below`)
-    return promptUser()
-    const getText = generateMarkdown(answers)
-    writeToFile('./files/ReadMe.md', getText)
+    return promptUser().then(response => {
+        writeToFile('ReadMe.md', generateMarkdown({...response}))
+    })
 }
 
 // Function call to initialize app
